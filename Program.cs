@@ -15,7 +15,7 @@
             {
                 Console.WriteLine("1) Add New Expense.");
                 Console.WriteLine("2) Show all expenses.");
-                Console.WriteLine("3) Delete an expense.");
+                Console.WriteLine("3) Delete all expenses.");
                 Console.WriteLine("4) Exit the program.");
 
                 string response = Console.ReadLine();
@@ -24,15 +24,38 @@
                 {
                     case "1":
                         //add new expense
-                        //expenses.Add(currentExpense);
-                        Console.WriteLine("case 1");
+                        //
+                        Console.WriteLine("How much did did you spend on food today?");
+                        string res = Console.ReadLine();
+                        try
+                        {
+                            if (res != null)
+                            {
+                                double responseDouble = double.Parse(res);
+                                expenses.Add(responseDouble);
+                                Console.WriteLine("Added Expense.");
+                            } 
+                            
+                        } catch (Exception e)
+                        {
+                            Console.WriteLine("Error: " + e.Message);
+                        }
+
+                        
+                        
+                        
                         break;
                     case "2":
-                        Console.WriteLine("case2");
+                        Console.WriteLine("All Expenses: ");
+                        foreach(double expense in expenses)
+                        {
+                            Console.WriteLine(expense);
+                        }
                         //show all expenses
                         break;
                     case "3":
-                        Console.WriteLine("case3");
+                        Console.WriteLine("Deleting Expenses.");
+                        expenses.Clear();
                         //Delete an expense
                         break;
                     case "4":
