@@ -31,6 +31,7 @@
                         {
                             if (res != null)
                             {
+                                //one bug i had to deal with involved responseDouble. I had the new double, but I was still using res (a string) to try and add that to my expenses list( of doubles).
                                 double responseDouble = double.Parse(res);
                                 expenses.Add(responseDouble);
                                 Console.WriteLine("Added Expense.");
