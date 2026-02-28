@@ -5,6 +5,8 @@
         static void Main(string[] args)
         {
             //daily expense tracker
+
+            bool running = true;
             List<double> expenses = new List<double>();
 
             double currentExpense;
@@ -23,21 +25,26 @@
                     case "1":
                         //add new expense
                         //expenses.Add(currentExpense);
+                        Console.WriteLine("case 1");
                         break;
                     case "2":
+                        Console.WriteLine("case2");
                         //show all expenses
                         break;
                     case "3":
-                        //show all expenses
+                        Console.WriteLine("case3");
+                        //Delete an expense
                         break;
                     case "4":
+                        Console.WriteLine("Quitting Program");
+                        running = false;
                         break;
                     default:
-                        Console.Write("Please choose between option 1-4.");
+                        Console.WriteLine("Please choose between option 1-4.");
                         break;
                 }
 
-            } while (true);
+            } while (running);
 
 
             
